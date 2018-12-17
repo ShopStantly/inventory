@@ -19,6 +19,8 @@ public class ArticleService {
         Article articleToRecude = wantedArticle.orElseThrow(NullPointerException::new);
         articleToRecude.setStock(articleToRecude.getStock() - number);
         articleRepository.save(articleToRecude);
+
+        //output packing slip as txt file
         try {
             PrintStream fileStream = new PrintStream(Math.random()+".txt");
             System.setOut(fileStream);
@@ -28,6 +30,7 @@ public class ArticleService {
         System.out.println(this.printPackingSlip(articleToRecude, number));
     }
 
+    //write packing slip
     public String printPackingSlip(Article article, int stock){
        String place = article.getPlace();
        String packingSlip = "----------------------------------------------\n Packing Slip für Artikel:\t| "+article.getName()+"\n Anzahl:\t\t\t\t\t| "+stock+"\n Ort:\t\t\t\t\t\t| "+place+"\n----------------------------------------------";
