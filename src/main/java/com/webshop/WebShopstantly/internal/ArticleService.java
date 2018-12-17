@@ -23,7 +23,7 @@ public class ArticleService {
 
     public String printPackingSlip(Article article, int stock){
        String place = article.getPlace();
-       String packingSlip = "Packing Slip für Artikel: "+article.getName()+"\n Anzahl: "+stock+"\n Ort: "+place;
+       String packingSlip = "----------------------------------------------\n Packing Slip für Artikel:\t| "+article.getName()+"\n Anzahl:\t\t\t\t\t| "+stock+"\n Ort:\t\t\t\t\t\t| "+place+"\n----------------------------------------------";
        return packingSlip;
     }
 }
