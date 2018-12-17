@@ -17,6 +17,7 @@ public class Article {
     private String id;
     private String name;
     private int stock;
+    private String place;
 
     public String getId() {
         return id;
@@ -40,6 +41,14 @@ public class Article {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
 }
